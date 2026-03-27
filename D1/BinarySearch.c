@@ -20,7 +20,23 @@ int binarySearch(int arr[], int n, int key) {
     return -1;  // Not found
 }
 
+int binarySearchRecursive(int arr[], int low, int high, int key) {
 
+    // Base Case
+    if (low > high)
+        return -1;
+
+    int mid = low + (high - low) / 2;
+
+    if (arr[mid] == key)
+        return mid;
+
+    else if (key < arr[mid])
+        return binarySearchRecursive(arr, low, mid - 1, key);
+
+    else
+        return binarySearchRecursive(arr, mid + 1, high, key);
+}
 
 int main() {
     int arr[] = {10, 20, 30, 40, 50, 60, 70};
@@ -28,6 +44,7 @@ int main() {
     int key = 50;
 
     int result = binarySearch(arr, n, key);
+    int result = binarySearchRecursive(arr, 0, n, key);
 
     if (result != -1)
         printf("Element found at index %d\n", result);
