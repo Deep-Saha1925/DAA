@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Iterative Binary Search Function
-int binarySearch(int arr[], int n, int key) {
+int binarySearchIter(int arr[], int n, int key) {
     int low = 0, high = n - 1;
 
     while (low <= high) {
@@ -43,7 +43,7 @@ int main() {
     int n = 7;
     int key = 50;
 
-    int result = binarySearch(arr, n, key);
+    int result = binarySearchIter(arr, n, key);
     int result = binarySearchRecursive(arr, 0, n, key);
 
     if (result != -1)
