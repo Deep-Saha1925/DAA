@@ -9,7 +9,6 @@ int linearPower(int x, int n){
     return x * linearPower(x, n-1);
 }
 
-
 // Optimzed recursive Power function
 int powerFunction(int x, int n){
     if(n == 0){
