@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-void TOH(int n, char src, char aux, char dest){
+void TOH(int n, char src[], char aux[], char dest[]){
     if(n == 1){
-        printf("Move disk 1 from %c to %c\n", src, dest);
+        printf("Move disk 1 from %s to %s\n", src, dest);
         return;
     }
 
@@ -18,5 +18,6 @@ void TOH(int n, char src, char aux, char dest){
 
 int main(){
     int n = 3;
-    TOH(n, 'A', 'B', 'C');
+    // TOH(n, 'A', 'B', 'C');
+    TOH(n, "SRC", "HELPER", "DESTINATION");
 }
