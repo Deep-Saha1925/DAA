@@ -1,8 +1,7 @@
 #include<stdio.h>
 
 struct Pair{
-    int min;
-    int max;
+    int min, max;
 };
 
 struct Pair getMinMax(int a[], int low, int high){
