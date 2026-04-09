@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-// Linear Recursion
+// Linear Recursion O(n)
 int linearPower(int x, int n){
     if(n == 0){
         return 1;
@@ -9,7 +9,7 @@ int linearPower(int x, int n){
     return x * linearPower(x, n-1);
 }
 
-// Optimzed recursive Power function
+// Optimzed recursive Power function O(log n)
 int powerFunction(int x, int n){
     if(n == 0){
         return 1;
