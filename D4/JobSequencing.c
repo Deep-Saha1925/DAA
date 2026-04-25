@@ -30,7 +30,7 @@ void sequenceJobs(struct Job a[], int n){
     int totalProfit = 0;
 
     for(int i=0; i<n; i++){
-        for(int j=a[i].deadline-1 ; j>=0; j--){  //for each job
+        for(int j=a[i].deadline-1 ; j>=0; j--){  //for each job try to place it as close to its deadline
             if(slot[j] == -1){
                 slot[j] = a[i].id;
                 totalProfit += a[i].profit;
