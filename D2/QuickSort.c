@@ -1,31 +1,31 @@
 #include <stdio.h>
 
 int partition(int a[], int p, int q) {
-    int pivot = a[p];   // first element as pivot
-    int i = p + 1;
-    int j = q;
-    int temp;
+        int pivot = a[p];   // first element as pivot
+        int i = p + 1;
+        int j = q;
+        int temp;
 
-    while (1) {
-        while (i <= q && a[i] <= pivot)
-            i++;
+        while (1) {
+            while (i <= q && a[i] <= pivot)
+                i++;
 
-        while (a[j] > pivot)
-            j--;
+            while (a[j] > pivot)
+                j--;
 
-        if (i < j) {
-            temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
-        } else {
-            break;
+            if (i < j) {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            } else {
+                break;
+            }
         }
-    }
 
-    // place pivot at correct position
-    temp = a[p];
-    a[p] = a[j];
-    a[j] = temp;
+        // place pivot at correct position
+        temp = a[p];
+        a[p] = a[j];
+        a[j] = temp;
 
     return j;
 }
