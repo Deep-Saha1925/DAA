@@ -14,7 +14,15 @@ void enqueue(int value){
     queue[++rear] = value;
 }
 
-void dfs(int graph[MAX][MAX], int vertices, int start){
+
+int dequeue(){
+    if(front == -1 || front > rear)
+        return -1;
+
+    return queue[front++];
+}
+
+void bfs(int graph[MAX][MAX], int vertices, int start){
     int visited[MAX] = {0};
 
     visited[start] = 1;
@@ -22,7 +30,7 @@ void dfs(int graph[MAX][MAX], int vertices, int start){
 
     while (front <= rear){
         int node = dequeue();
-        printf("Node: %d", node);
+        printf("%d ", node);
 
         for(int i=0; i<vertices; i++){
             if(graph[node][i] == 1 && visited[i] == 0){
@@ -32,13 +40,6 @@ void dfs(int graph[MAX][MAX], int vertices, int start){
         }
     }
     
-}
-
-int dequeue(){
-    if(front == -1 || front > rear)
-        return -1;
-
-    return queue[front++];
 }
 
 int main(){
