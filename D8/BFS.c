@@ -14,6 +14,26 @@ void enqueue(int value){
     queue[++rear] = value;
 }
 
+void dfs(int graph[MAX][MAX], int vertices, int start){
+    int visited[MAX] = {0};
+
+    visited[start] = 1;
+    enqueue(start);
+
+    while (front <= rear){
+        int node = dequeue();
+        printf("Node: %d", node);
+
+        for(int i=0; i<vertices; i++){
+            if(graph[node][i] == 1 && visited[i] == 0){
+                visited[i] = 1;
+                enqueue(i);
+            }
+        }
+    }
+    
+}
+
 int dequeue(){
     if(front == -1 || front > rear)
         return -1;
