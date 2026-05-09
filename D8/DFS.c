@@ -11,3 +11,22 @@ void dfs(int graph[MAX][MAX], int visited[], int node, int vertices){
         }
     }
 }
+
+int main(){
+    int vertices = 5;
+
+    int graph[MAX][MAX] = {
+        {0,1,1,0,0},
+        {1,0,0,1,1},
+        {1,0,0,0,0},
+        {0,1,0,0,0},
+        {0,1,0,0,0}
+    };
+
+    int visited[MAX] = {0};
+
+    printf("DFS Traversal: ");
+    dfs(graph, visited, 0, vertices);
+
+    return 0;
+}
