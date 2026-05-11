@@ -43,3 +43,23 @@ int solveQueens(int col){
 
     return 0;   
 }
+
+void printBoard(){
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%d ", board[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main(){
+    if(solveQueens(0)){
+        printf("Solution Found:\n");
+        printBoard();
+    } else {
+        printf("No Solution\n");
+    }
+
+    return 0;
+}
