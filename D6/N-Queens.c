@@ -24,3 +24,22 @@ int isSafe(int row, int col){
 
     return 1;
 }
+
+int solveQueens(int col){
+    if(col >= N)
+        return 1;
+
+    for (int i = 0; i < N; i++){
+        if(isSafe(i, col)){
+            board[i][col] = 1;
+
+            if(solveQueens(col+1))
+                return 1;
+
+            //backtrack
+            board[i][col] = 0;
+        }
+    }
+
+    return 0;   
+}
