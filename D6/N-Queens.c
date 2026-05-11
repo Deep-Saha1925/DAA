@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define N 4
+#define N 8
 
 int board[N][N];
 
@@ -47,7 +47,10 @@ int solveQueens(int col){
 void printBoard(){
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            printf("%d ", board[i][j]);
+            if(board[i][j])
+                printf("%d ", board[i][j]);
+            else
+                printf("- ");
         }
         printf("\n");
     }
